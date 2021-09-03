@@ -4,6 +4,8 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+let id = 0
+
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -70,11 +72,13 @@ const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    id: id
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
+  id++
 };
 
 // Delete the clicked note
