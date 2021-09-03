@@ -18,17 +18,15 @@ router.post("/api/notes", (req, res) => {
 });
 
 router.delete("/api/notes/:id", (req, res) => {
-  const newSaved = (note) => {
-      if (note.id === Number(req.params.id)) {
-          console.log(db, note.id, Number(req.params.id));
-          db.splice((note.id-1), 1)
-          console.log(db);
-      }
-      return note
+  for (let i = 0; i < db.length; i++) {
+    const newSaved = (note) => {
+        if (note.id === Number(req.params.id)) {
+            db.splice(i, 1)
+        }
+        return note
+    }
+    newSaved(db[i])
   }
-  db.forEach((note) => {
-      newSaved(note)
-  });
   res.json(db);
 });
 
