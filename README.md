@@ -1,6 +1,8 @@
 # Note-Taker
   ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) 
 
+![image](https://user-images.githubusercontent.com/80925456/132068757-0bf718e5-2994-4534-8480-77cbf18dd0dc.png)
+
 Live Link: https://ancient-bastion-94462.herokuapp.com/
 
 ## Table of Contents
