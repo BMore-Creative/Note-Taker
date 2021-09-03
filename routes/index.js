@@ -19,16 +19,17 @@ router.post("/api/notes", (req, res) => {
 
 router.delete("/api/notes/:id", (req, res) => {
   const newSaved = (note) => {
-      if (note.id == req.params.id) {
-          console.log(note.id, req.params.id);
-        return note = {}
+      if (note.id === Number(req.params.id)) {
+          console.log(db, note.id, Number(req.params.id));
+          db.splice((note.id-1), 1)
+          console.log(db);
       }
+      return note
   }
   db.forEach((note) => {
       newSaved(note)
   });
-  console.log(newSaved);
-  res.json(newSaved);
+  res.json(db);
 });
 
 router.get("*", (req, res) =>
